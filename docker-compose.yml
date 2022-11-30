@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    container_name: "devcontainer"
+    environment:
+      DB_USERNAME: "postgres"
+      DB_PASSWORD: "postgrespw"
+      DB_TYPE: "postgres"
+      DB_HOST: "database"
+      DB_TABLE: "postgres"
+      DB_PORT: "5432"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+    networks:
+      - fullstack
+    command: sleep infinity
+  
+  database:
+    image: postgres:latest
+    container_name: "database"
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_USER=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - fullstack
+    volumes:
+      - database_postgres:/var/lib/postgresql
+
+volumes:
+  database_postgres:
+
+networks:
+  fullstack:
+    driver: bridge
