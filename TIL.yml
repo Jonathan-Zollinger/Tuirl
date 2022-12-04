@@ -1,0 +1,8 @@
+---
+title: "thisismytitle" # title is an h1 tag
+sub_title: "generated with [GIL](https://github.com/Jonathan-Zollinger/GIL)"
+topics:
+  topicName: SSH
+  note: The following will generate a new SSH key.
+  example: ssh-keygen -t rsa -C "your@email.com" -b 4096
+...
