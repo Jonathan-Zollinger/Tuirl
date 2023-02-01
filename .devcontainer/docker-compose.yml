@@ -1,0 +1,10 @@
+services:
+  dev:
+    container_name: dev
+    image: golang:latest
+    volumes:
+      - type: bind
+        source: ..
+        target: /mnt/
+    tty: true
+    stdin_open: true
