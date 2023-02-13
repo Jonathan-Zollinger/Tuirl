@@ -1,2 +1,2 @@
-# GIL
-A TIL generator written in Go
+# Tuirl
+a TUI 'til' style knowledge base loosely following the zettelkasten method
