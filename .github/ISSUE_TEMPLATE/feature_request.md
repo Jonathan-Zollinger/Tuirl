@@ -1,20 +1,39 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: New Feature
+about: New improvement to the repo
 title: "[New Feature Title]"
 labels: feature
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Feature Overview
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Short, sweet and descriptive summary of the feature
+ - written in imperative tense, like a git commit message.
+   - https://initialcommit.com/blog/Git-Commit-Message-Imperative-Mood
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+Feature overview examples:
+  - 'add automated testing for all unit tests'
+  - 'configure gh-actions to run on each pull request'
+  - 'Add support for ubuntu:latest docker image.'
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Full Description
+
+Be as descriptive as possible, but remember to not describe HOW to execute any of the code. Rather, focus on the <i>why</i> behind any requirements that you feel need justifying. 
+
+Bad: 
+  ```
+  user input should be saved to an existing array of previous responses. do not create a new array
+  ```
+Good:
+  ```
+  Additions to the codebase adhere to our styleguides and other coding standards. 
+  ```
+Include pictures when helpful
+
+## Further Reading
+
+include references to similar features, external features, external readings as helpful 
+
+### <i> Delete a section and its heading if not used </i>
