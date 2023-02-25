@@ -32,6 +32,11 @@ Good:
   ```
 Include pictures when helpful
 
+### Acceptance Criteria
+
+- [ ] This will help define when this feature is fully addressed. 
+- [ ] A series of checkboxes is expected.
+
 ## Further Reading
 
 include references to similar features, external features, external readings as helpful 
