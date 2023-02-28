@@ -1,0 +1,33 @@
+type Notecard {
+	id:           ID!
+	title:        String!
+	entry:        String!
+}
+
+input NewNotecard {
+  title:        String!
+	entry:        String!
+}
+
+type Section {
+	id:           ID!
+	title:        String!
+	subTitle:     String!
+	noteCards:    [Notecard!]!
+}
+
+input NewSection {
+	title:        String!
+	subtitle:     String!
+	notecardID:   [ID!]!
+}
+
+type Query {
+  notecards:  [Notecard!]!
+  sections:   [Section!]!
+}
+
+type Mutation {
+  createNotecard(input: NewNotecard!): Notecard!
+  createSection(input: NewSection!):   Section!
+}
