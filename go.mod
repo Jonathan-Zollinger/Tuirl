@@ -5,8 +5,10 @@ go 1.19
 require (
 	github.com/99designs/gqlgen v0.17.24
 	github.com/charmbracelet/glamour v0.6.0
+	github.com/charmbracelet/log v0.1.2
 	github.com/mattn/go-isatty v0.0.17
 	github.com/muesli/go-app-paths v0.2.2
+	github.com/sony/sonyflake v1.1.0
 	github.com/spf13/cobra v1.6.1
 	github.com/vektah/gqlparser/v2 v2.5.1
 )
@@ -16,8 +18,10 @@ require (
 	github.com/alecthomas/chroma v0.10.0 // indirect
 	github.com/aymanbagabas/go-osc52 v1.0.3 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
+	github.com/charmbracelet/lipgloss v0.6.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/dlclark/regexp2 v1.4.0 // indirect
+	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/gorilla/css v1.0.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect

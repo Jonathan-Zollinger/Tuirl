@@ -9,11 +9,25 @@ import (
 	"fmt"
 
 	"github.com/Jonathan-Zollinger/Tuirl/graph/model"
+	"github.com/charmbracelet/log"
+	"github.com/sony/sonyflake"
 )
+
+var sf *sonyflake.Sonyflake
 
 // CreateNotecard is the resolver for the createNotecard field.
 func (r *mutationResolver) CreateNotecard(ctx context.Context, input model.NewNotecard) (*model.Notecard, error) {
-	panic(fmt.Errorf("not implemented: CreateNotecard - createNotecard"))
+	newID, err := sf.NextID()
+	if err != nil {
+		log.Fatal("failed to create a unique ID when calling sonyflake.Sonyflake for CreateNotecard")
+	}
+	newNotecard := &model.Notecard{
+		ID:    fmt.Sprintf("T%d", newID),
+		Title: input.Title,
+		Entry: input.Entry,
+	}
+	r.notecards = append(r.notecards, newNotecard)
+	return newNotecard, nil
 }
 
 // CreateSection is the resolver for the createSection field.
