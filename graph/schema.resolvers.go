@@ -13,10 +13,9 @@ import (
 	"github.com/sony/sonyflake"
 )
 
-var sf *sonyflake.Sonyflake
-
 // CreateNotecard is the resolver for the createNotecard field.
 func (r *mutationResolver) CreateNotecard(ctx context.Context, input model.NewNotecard) (*model.Notecard, error) {
+	var sf *sonyflake.Sonyflake
 	newID, err := sf.NextID()
 	if err != nil {
 		log.Fatal("failed to create a unique ID when calling sonyflake.Sonyflake for CreateNotecard")
@@ -32,6 +31,7 @@ func (r *mutationResolver) CreateNotecard(ctx context.Context, input model.NewNo
 
 // CreateSection is the resolver for the createSection field.
 func (r *mutationResolver) CreateSection(ctx context.Context, input model.NewSection) (*model.Section, error) {
+	var sf *sonyflake.Sonyflake
 	newID, err := sf.NextID()
 	if err != nil {
 		log.Fatal("failed to create a unique ID when calling 'sonyflake.Sonyflake' for CreateSection")
