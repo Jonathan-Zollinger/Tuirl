@@ -32,17 +32,27 @@ func (r *mutationResolver) CreateNotecard(ctx context.Context, input model.NewNo
 
 // CreateSection is the resolver for the createSection field.
 func (r *mutationResolver) CreateSection(ctx context.Context, input model.NewSection) (*model.Section, error) {
-	panic(fmt.Errorf("not implemented: CreateSection - createSection"))
+	newID, err := sf.NextID()
+	if err != nil {
+		log.Fatal("failed to create a unique ID when calling sonyflake.Sonyflake for CreateNotecard")
+	}
+	newSection := &model.Section{
+		ID:       fmt.Sprintf("T%d", newID),
+		Title:    input.Title,
+		SubTitle: input.Subtitle,
+	}
+	r.sections = append(r.sections, newSection)
+	return newSection, nil
 }
 
 // Notecards is the resolver for the notecards field.
 func (r *queryResolver) Notecards(ctx context.Context) ([]*model.Notecard, error) {
-	panic(fmt.Errorf("not implemented: Notecards - notecards"))
+	return r.notecards, nil
 }
 
 // Sections is the resolver for the sections field.
 func (r *queryResolver) Sections(ctx context.Context) ([]*model.Section, error) {
-	panic(fmt.Errorf("not implemented: Sections - sections"))
+	return r.sections, nil
 }
 
 // Mutation returns MutationResolver implementation.
