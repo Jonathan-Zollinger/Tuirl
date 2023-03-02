@@ -34,7 +34,7 @@ func (r *mutationResolver) CreateNotecard(ctx context.Context, input model.NewNo
 func (r *mutationResolver) CreateSection(ctx context.Context, input model.NewSection) (*model.Section, error) {
 	newID, err := sf.NextID()
 	if err != nil {
-		log.Fatal("failed to create a unique ID when calling sonyflake.Sonyflake for CreateNotecard")
+		log.Fatal("failed to create a unique ID when calling 'sonyflake.Sonyflake' for CreateSection")
 	}
 	newSection := &model.Section{
 		ID:       fmt.Sprintf("T%d", newID),
