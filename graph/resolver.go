@@ -8,4 +8,5 @@ import "github.com/Jonathan-Zollinger/Tuirl/graph/model"
 
 type Resolver struct {
 	notecards []*model.Notecard
+	sections  []*model.Section
 }
